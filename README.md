@@ -7,8 +7,7 @@ From main project directory:
 composer update
 2. Copy base environment file: \
 cp .env.example .env
-3. Create sqlite database: \
-cd database \
+3. Create sqlite database in database/ directory: \
 sqlite database.sqlite
 4. Generate application key: \
 php artisan key:generate

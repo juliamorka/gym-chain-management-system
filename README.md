@@ -11,6 +11,7 @@ cp .env.example .env
 sqlite database.sqlite
 4. Generate application key: \
 php artisan key:generate
+5. Next follow the steps from "Running app for development" section.
 ## :runner: Running app for development
 From main project directory:
 1. Install dependencies (not necessary if composer.* files haven't changed since last pull): \

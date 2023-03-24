@@ -3,8 +3,8 @@ A web application supporting sport and recreational facilities chain management.
 Requires PHP==8.1.2, composer==2.2.6 and sqlite>=2.8.17.
 ## :bulb: Running app for the first time
 From main project directory:
-1. Install dependencies: 
-composer update \
+1. Install dependencies: \
+composer update
 2. Copy base environment file: \
 cp .env.example .env
 3. Create sqlite database: \

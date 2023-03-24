@@ -1,5 +1,5 @@
 # :basketball: gym-chain-management-system
-A web application supporting sport and recreational facilities chain management.
+A web application supporting sport and recreational facilities chain management. \
 Requires PHP==8.1.2, composer==2.2.6 and sqlite>=2.8.17.
 ## :bulb: Running app for the first time
 From main project directory:

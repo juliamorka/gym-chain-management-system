@@ -14,7 +14,7 @@ php artisan key:generate
 5. Next follow the steps from "Running app for development" section.
 ## :runner: Running app for development
 From main project directory:
-1. Install dependencies (not necessary if composer.* files haven't changed since last pull): \
+1. Install dependencies (not necessary if composer.* files haven't been changed since last pull): \
 composer update
 2. Run migrations with seeders: \
 php artisan migrate:fresh --seed

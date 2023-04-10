@@ -24,3 +24,24 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/schedule', function () {
+    return view('schedule');
+})->name('schedule');
+
+Route::get('/reservations', function () {
+    return view('reservations');
+})->name('reservations');
+
+Route::get('/supplies', function () {
+    return view('supplies');
+})->name('supplies');
+
+Route::get('/reports', function () {
+    return view('reports');
+})->name('reports');
+
+Route::get('/details', function () {
+    return view('details');
+})->name('details');
+

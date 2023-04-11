@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ __('Gym') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ __('Gym') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -31,24 +31,32 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
+                        @if (Auth::user() and Auth::user()->role != "Client")
                             <a class="nav-link" href="{{ route('schedule') }}">
                                 {{ __('Schedule') }}
                             </a>
+                        @endif
                         </li>
                         <li class="nav-item">
+                        @if (Auth::user() and in_array(Auth::user()->role,array("CEO", "Regional manager", "Receptionist")))
                             <a class="nav-link" href="{{ route('reservations') }}">
                                 {{ __('Reservations') }}
                             </a>
+                        @endif
                         </li>
                         <li class="nav-item">
+                        @if (Auth::user() and in_array(Auth::user()->role,array("CEO", "Regional manager", "Warehouse worker")))
                             <a class="nav-link" href="{{ route('supplies') }}">
                                 {{ __('Supplies') }}
                             </a>
+                        @endif
                         </li>
                         <li class="nav-item">
+                        @if (Auth::user() and in_array(Auth::user()->role,array("CEO", "Regional manager", "Accountant")))
                             <a class="nav-link" href="{{ route('reports') }}">
                                 {{ __('Reports') }}
                             </a>
+                        @endif
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('details') }}">
@@ -64,12 +72,6 @@
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else

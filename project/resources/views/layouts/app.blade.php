@@ -31,7 +31,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                        @if (Auth::user() and Auth::user()->role != "Client")
+                        @if (Auth::user() and Auth::user()->role != "Warehouse worker")
                             <a class="nav-link" href="{{ route('schedule') }}">
                                 {{ __('Schedule') }}
                             </a>
@@ -52,7 +52,7 @@
                         @endif
                         </li>
                         <li class="nav-item">
-                        @if (Auth::user() and in_array(Auth::user()->role,array("CEO", "Regional manager", "Accountant")))
+                        @if (Auth::user() and in_array(Auth::user()->role,array("CEO", "Accountant")))
                             <a class="nav-link" href="{{ route('reports') }}">
                                 {{ __('Reports') }}
                             </a>

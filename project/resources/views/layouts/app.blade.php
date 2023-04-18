@@ -75,6 +75,15 @@
                                 </li>
                             @endif
                         @else
+                            @if (Route::has('register'))
+                                 <li class="nav-item">
+                                     @if (Auth::user() and Auth::user()->role == "CEO")
+                                         <a class="nav-link" style="color: black" href="{{ route('register') }}">
+                                              {{ __('Create new user') }}
+                                         </a>
+                                     @endif
+                                 </li>
+                            @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

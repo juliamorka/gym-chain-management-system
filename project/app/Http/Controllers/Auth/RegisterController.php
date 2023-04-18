@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\Models\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\View\View;
+use Symfony\Component\HttpFoundation\Request;
 
 class RegisterController extends Controller
 {
@@ -22,52 +22,31 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    //use RegistersUsers;
 
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function create(): View
     {
-        $this->middleware('guest');
+        return view('auth.register');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
+    public function store(Request $request): View
     {
-        return Validator::make($data, [
+        $request->validate( [
             'name' => ['required', 'string', 'max:255'],
+            'role' => ['required', 'string', 'max:20'], # dodac warunek
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
-    }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\Models\User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+        $user = User::create([
+            'name' => $request->name,
+            'role' => $request->role,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
         ]);
+
+        event(new Registered($user));
+
+        return view('auth.added');
     }
 }

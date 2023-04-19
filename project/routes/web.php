@@ -38,13 +38,14 @@ Route::get('/reports', function () {
     return view('reports');
 })->name('reports');
 
-Route::get('/details', function () {
+/*Route::get('/details', function () {
     return view('details');
-})->name('details');
+})->name('details');*/
 
-Route::get('/details', function () {
+/*Route::get('/details', function () {
     return view('details');
-})->name('details');
+})->name('details');*/
+Route::get('/details',[\App\Http\Controllers\DetailController::class,'details'])->name('details');
 
 Route::get('register', [RegisterController::class, 'create'])
     ->middleware(['auth', 'verified'])->name('register');

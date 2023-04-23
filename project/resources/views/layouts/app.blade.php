@@ -77,7 +77,7 @@
                         @else
                             @if (Route::has('register'))
                                  <li class="nav-item">
-                                     @if (Auth::user() and Auth::user()->role == "CEO")
+                                     @if (Auth::user() and in_array(Auth::user()->role,array("CEO", "Regional manager")))
                                          <a class="nav-link" style="color: black" href="{{ route('register') }}">
                                               {{ __('Create new user') }}
                                          </a>

@@ -31,11 +31,11 @@
                             <div class="col-md-6">
                                 <select id="role" name="role" class="form-control @error('role') is-invalid @enderror">
                                     <option disabled selected value> {{Request::get('role') ?? " -- select an option -- "}} </option>
-                                    <option value="Regional manager" >Regional manager</option>
+                                    @if( Auth::user()->role == "CEO" )<option value="Regional manager" >Regional manager</option>@endif
                                     <option value="Regular employee" >Regular employee</option>
                                     <option value="Warehouse worker" >Warehouse worker</option>
                                     <option value="Receptionist" >Receptionist</option>
-                                    <option value="Accountant" >Accountant</option>
+                                    @if( Auth::user()->role == "CEO" )<option value="Accountant" >Accountant</option>@endif
                                 </select>
 
                                 @error('role')

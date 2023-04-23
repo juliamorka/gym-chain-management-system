@@ -18,5 +18,7 @@ From main project directory:
 composer update
 2. Run migrations with seeders: \
 php artisan migrate:fresh --seed
-3. Run the server: \
+3. (for Windows) Run the npm: \
+npm run dev
+4. Run the server: \
 php artisan serve

@@ -33,7 +33,7 @@ class RegisterController extends Controller
     {
         $request->validate( [
             'name' => ['required', 'string', 'max:255'],
-            'role' => ['required', 'string', 'max:20'], # dodac warunek
+            'role' => ['required', 'string', 'max:20'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);

@@ -17,15 +17,17 @@ class UserSeeder extends Seeder
         $user = new User();
         $user->name = "David Wallace";
         $user->email = "david.wallace@gmail.com";
-	$user->password = bcrypt("password123");
-	$user->role = "CEO";
-	$user->save();
+	    $user->password = bcrypt("password123");
+	    $user->role = "CEO";
+        $user->location_id = 1;
+	    $user->save();
 
 	$user = new User();
         $user->name = "Michael Scott";
         $user->email = "michael.scott@gmail.com";
         $user->password = bcrypt("password123");
         $user->role = "Regional manager";
+        $user->location_id = 1;
         $user->save();
 
 	$user = new User();
@@ -33,6 +35,7 @@ class UserSeeder extends Seeder
         $user->email = "jim.halpert@gmail.com";
         $user->password = bcrypt("password123");
         $user->role = "Regular employee";
+        $user->location_id = 1;
         $user->save();
 
 	$user = new User();
@@ -40,6 +43,7 @@ class UserSeeder extends Seeder
         $user->email = "darryl.philbin@gmail.com";
         $user->password = bcrypt("password123");
         $user->role = "Warehouse worker";
+        $user->location_id = 1;
         $user->save();
 
 	$user = new User();
@@ -47,6 +51,7 @@ class UserSeeder extends Seeder
         $user->email = "pam.beesly@gmail.com";
         $user->password = bcrypt("password123");
         $user->role = "Receptionist";
+        $user->location_id = 1;
         $user->save();
 
 	$user = new User();
@@ -54,6 +59,7 @@ class UserSeeder extends Seeder
         $user->email = "angela.martin@gmail.com";
         $user->password = bcrypt("password123");
         $user->role = "Accountant";
+        $user->location_id = 1;
         $user->save();
 
     }

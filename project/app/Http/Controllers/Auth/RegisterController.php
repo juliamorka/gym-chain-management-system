@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 use Symfony\Component\HttpFoundation\Request;
@@ -34,6 +35,7 @@ class RegisterController extends Controller
         $request->validate( [
             'name' => ['required', 'string', 'max:255'],
             'role' => ['required', 'string', 'max:20'],
+            'location_id' => ['required'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -41,6 +43,7 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $request->name,
             'role' => $request->role,
+            'location_id' => $request->location_id,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);

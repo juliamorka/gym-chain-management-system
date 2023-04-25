@@ -46,6 +46,30 @@
                             </div>
                         </div>
 
+                        @if(Auth::user()->role == 'CEO')
+                        <?php $locations = \App\Models\Location::all();?>
+                        <div class="row mb-3">
+                            <label for="location_id" class="col-md-4 col-form-label text-md-end">{{ __('Location') }}</label>
+
+                            <div class="col-md-6">
+                                <select id="location_id" name="location_id" class="form-control @error('location_id') is-invalid @enderror">
+                                    <option disabled selected value> {{Request::get('location_id') ?? " -- select an option -- "}} </option>
+                                    @foreach($locations as $loc)
+                                    <option value={{$loc->id}} >{{$loc->city}}, {{$loc->street}}</option>
+                                    @endforeach
+                                </select>
+
+                                @error('location_id')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        @elseif(Auth::user()->role == 'Regional manager')
+                            <input id="location_id" type="hidden" class="form-control" name="location_id" value="{{ Auth::user()->location_id }}">
+                        @endif
+
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 

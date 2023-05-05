@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
-    @if (Auth::user() and Auth::user()->role == "Regional manager")
+    @if (Auth::user() and Auth::user()->role == "CEO")
       <div class="card">
         <div class="card-header">{{ __('Items in warehouse') }}</div>
         <div class="card-body">

@@ -11,8 +11,9 @@
           <table class="col-md-16" style="table-layout: fixed">
             <thead class="card-header">
               <tr style="text-align: center">
-                <th class="col-md-6">Name</th>
-                <th class="col-md-6">Count</th>
+                <th class="col-md-4">Name</th>
+                <th class="col-md-4">Count</th>
+                <th class="col-md-4">Branch ID</th>
               </tr>
             </thead>
             <tbody class="card-body"> 
@@ -21,6 +22,7 @@
                 <tr style="text-align: center">
                   <td>{{$stock_item->item}}</td>
                   <td>{{$stock_item->count}}</td>
+                  <td>{{$stock_item->location_id}}</td>
                 </tr>
               </div> 
               @endforeach 

@@ -35,14 +35,19 @@ class RegisterController extends Controller
         $request->validate( [
             'name' => ['required', 'string', 'max:255'],
             'role' => ['required', 'string', 'max:20'],
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'location_id' => ['required'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
+        
+        $image_name = time().'.'.$request->image->extension();  
+        $request->image->move(public_path('images'), $image_name);
 
         $user = User::create([
             'name' => $request->name,
             'role' => $request->role,
+            'profile_pic' => "images/" . $image_name,
             'location_id' => $request->location_id,
             'email' => $request->email,
             'password' => Hash::make($request->password),

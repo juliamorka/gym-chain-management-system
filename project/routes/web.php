@@ -30,22 +30,18 @@ Route::get('/reservations', function () {
     return view('reservations');
 })->name('reservations');
 
-Route::get('/supplies', function () {
+/*Route::get('/supplies', function () {
     return view('supplies');
-})->name('supplies');
+})->name('supplies');*/
 
 Route::get('/reports', function () {
     return view('reports');
 })->name('reports');
 
-/*Route::get('/details', function () {
-    return view('details');
-})->name('details');*/
 
-/*Route::get('/details', function () {
-    return view('details');
-})->name('details');*/
 Route::get('/details',[\App\Http\Controllers\DetailController::class,'details'])->name('details');
+
+Route::get('/supplies',[\App\Http\Controllers\SuppliesController::class,'supplies'])->name('supplies');
 
 Route::get('register', [RegisterController::class, 'create'])
     ->middleware(['auth', 'verified'])->name('register');

@@ -18,7 +18,7 @@
                 <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg" >
                     <div class="flex font-sans" style="display:flex; align-items: center">
                         <div class="flex-none w-48 relative" >
-                            <img src="{{$empl->image}}" style="width: 300px; height:250px"/>
+                            <img src="{{$empl->profile_pic}}" style="width: 300px; height:250px"/>
                         </div>
                         <div class="ml-4" style="padding-left:15px;/* display: inline; vertical-align: middle*/">
                             <h3 class="text-lg font-semibold text-slate-500">

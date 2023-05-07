@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
 	    $user->password = bcrypt("password123");
 	    $user->role = "CEO";
         $user->location_id = 1;
-        $user->image ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3vL5_NhwKz9SQfEThMtZ-gfD1z3Ho0OXhyw&usqp=CAU';
+        $user->profile_pic ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3vL5_NhwKz9SQfEThMtZ-gfD1z3Ho0OXhyw&usqp=CAU';
 	    $user->save();
 
 	$user = new User();
@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
         $user->password = bcrypt("password123");
         $user->role = "Regional manager";
         $user->location_id = 1;
-        $user->image ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3vL5_NhwKz9SQfEThMtZ-gfD1z3Ho0OXhyw&usqp=CAU';
+        $user->profile_pic ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3vL5_NhwKz9SQfEThMtZ-gfD1z3Ho0OXhyw&usqp=CAU';
         $user->save();
 
 	$user = new User();
@@ -38,7 +38,7 @@ class UserSeeder extends Seeder
         $user->password = bcrypt("password123");
         $user->role = "Regular employee";
         $user->location_id = 1;
-        $user->image ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3vL5_NhwKz9SQfEThMtZ-gfD1z3Ho0OXhyw&usqp=CAU';
+        $user->profile_pic ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3vL5_NhwKz9SQfEThMtZ-gfD1z3Ho0OXhyw&usqp=CAU';
         $user->save();
 
 	$user = new User();
@@ -47,7 +47,7 @@ class UserSeeder extends Seeder
         $user->password = bcrypt("password123");
         $user->role = "Warehouse worker";
         $user->location_id = 1;
-        $user->image ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3vL5_NhwKz9SQfEThMtZ-gfD1z3Ho0OXhyw&usqp=CAU';
+        $user->profile_pic ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3vL5_NhwKz9SQfEThMtZ-gfD1z3Ho0OXhyw&usqp=CAU';
         $user->save();
 
 	$user = new User();
@@ -56,7 +56,7 @@ class UserSeeder extends Seeder
         $user->password = bcrypt("password123");
         $user->role = "Receptionist";
         $user->location_id = 1;
-        $user->image ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3vL5_NhwKz9SQfEThMtZ-gfD1z3Ho0OXhyw&usqp=CAU';
+        $user->profile_pic ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3vL5_NhwKz9SQfEThMtZ-gfD1z3Ho0OXhyw&usqp=CAU';
         $user->save();
 
 	$user = new User();
@@ -65,7 +65,7 @@ class UserSeeder extends Seeder
         $user->password = bcrypt("password123");
         $user->role = "Accountant";
         $user->location_id = 1;
-        $user->image ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3vL5_NhwKz9SQfEThMtZ-gfD1z3Ho0OXhyw&usqp=CAU';
+        $user->profile_pic ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3vL5_NhwKz9SQfEThMtZ-gfD1z3Ho0OXhyw&usqp=CAU';
         $user->save();
 
     }

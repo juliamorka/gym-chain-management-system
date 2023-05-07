@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Create new user') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row mb-3">
@@ -24,6 +24,13 @@
                                 @enderror
                             </div>
                         </div>
+                        
+                        <div class="row mb-3">
+                            <label for="image" class="col-md-4 col-form-label text-md-end">{{ __('Profile picture') }}</label>                        
+                        		<div class="col-md-6">
+                    				<input type="file" name="image" class="form-control">
+                    			</div>
+                    	</div>
 
                         <div class="row mb-3">
                             <label for="role" class="col-md-4 col-form-label text-md-end">{{ __('Role') }}</label>

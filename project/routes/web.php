@@ -47,3 +47,4 @@ Route::get('register', [RegisterController::class, 'create'])
     ->middleware(['auth', 'verified'])->name('register');
 
 Route::post('register', [RegisterController::class, 'store'])->name('register.store');
+Route::post('supplies', [\App\Http\Controllers\SuppliesController::class, 'add_supplies'])->name('supplies');
